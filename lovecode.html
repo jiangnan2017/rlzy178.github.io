@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Heart</title>
+  <style>
+    .heart-container {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 100px auto;
+        /* 心脏跳动的一个动画效果的持续时间及持续多久，这里是持续时间为1s，次数是无限次循环播放 */
+        animation: heartbeat 1s infinite;
+    }
+
+    .heart {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:rgb(229, 61, 148);
+        transform: rotate(-45deg);
+    }
+
+    .heart::before,
+    .heart::after {
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: rgb(229, 61, 148);
+    }
+
+    .heart::before {
+        top: -50px;
+        left: 0;
+    }
+
+    .heart::after {
+        top: 0;
+        left: 50px;
+    }
+
+    /* 自定义动画效果，爱心的放大和缩小 */
+    @keyframes heartbeat {
+        0% { transform: scale(0.8); }
+        50% { transform: scale(1.2); }
+        100% { transform: scale(0.8); }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart-container">
+    <div class="heart"></div>
+  </div>
+</body>
+</html>
